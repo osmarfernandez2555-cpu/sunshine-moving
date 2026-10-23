@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sunshine Moving Company – Free Moving Quote</title>
-<meta name="description" content="Local and long-distance moving, packing, storage and furniture delivery. Licensed & insured crews. Get your free moving quote in 3 quick steps.">
+<meta name="description" content="South Florida's favorite movers. Local and long-distance moving, packing, junk removal and furniture assembly. Open 24 hours. Licensed & insured crews. Get your free moving quote in 3 quick steps.">
 <meta name="theme-color" content="#CFA97E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,6 +90,9 @@ button{font:inherit;color:inherit}
 .btn-ghost:hover{background:rgba(28,23,18,.08)}
 .btn-wa{background:var(--wa);color:#fff}
 .btn-wa:hover{background:#176639;transform:translateY(-1px)}
+.btn-call{background:var(--blue-deep);color:#fff}
+.btn-call:hover{background:#17139A;transform:translateY(-1px)}
+.btn-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
 .btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
 
 /* ---------- Header ---------- */
@@ -156,7 +159,7 @@ button{font:inherit;color:inherit}
 h1{
   margin:0;
   font-family:var(--f-display);font-weight:900;text-transform:uppercase;
-  font-size:clamp(3.1rem, 8.4vw, 6rem);line-height:.86;letter-spacing:-.005em;
+  font-size:clamp(3rem, 7.6vw, 5.4rem);line-height:.86;letter-spacing:-.005em;
   text-wrap:balance;
 }
 .h1-marker{
@@ -292,6 +295,16 @@ h2{
 .item h3{margin:.1rem 0 .25rem;font-size:1.2rem;font-weight:800;line-height:1.2}
 .item p{margin:0;color:var(--label-ink-soft);font-size:1rem}
 .item-code{font-family:var(--f-mono);font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--label-ink-soft);padding-top:.35rem}
+.includes{margin-top:2rem;padding:1.4rem;border:2px dashed var(--ink);border-radius:6px;background:#FFF6E6}
+.includes h3{margin:0 0 1rem;font-family:var(--f-display);font-weight:900;font-size:clamp(1.8rem,3.4vw,2.4rem);text-transform:uppercase;line-height:.95}
+.includes ul{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem 2rem;margin:0;padding:0;list-style:none}
+@media (max-width:1100px){.includes ul{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.includes ul{grid-template-columns:1fr}}
+.includes li{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;align-items:start;padding:.7rem 0;border-bottom:1px solid var(--label-line)}
+.includes li > .icon:first-child{color:var(--blue-deep);margin-top:2px}
+.includes strong{display:block;font-weight:800;line-height:1.25}
+.includes span{display:block;font-size:.95rem;color:var(--label-ink-soft)}
+.includes .tick{color:var(--wa);stroke-width:2.6;width:20px;height:20px;margin-top:2px}
 .manifest-sign{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.5rem;
 }
@@ -369,7 +382,7 @@ h2{
 .loc-lines .icon{color:var(--blue-deep)}
 .loc-lines a{text-decoration:none}
 .loc-lines a:hover{text-decoration:underline}
-.loc-card .btn{align-self:flex-start;margin-top:auto}
+.loc-btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:auto}
 .map{
   position:relative;display:block;min-height:320px;border-radius:6px;overflow:hidden;
   background:var(--label);box-shadow:var(--shadow-label);text-decoration:none;
@@ -418,7 +431,7 @@ h2{
 }
 .quickbar.show{transform:none}
 .quickbar .btn{flex:1}
-.quickbar .btn-wa{flex:0 0 56px;padding:0}
+.quickbar .btn-wa,.quickbar .btn-call{flex:0 0 56px;padding:0}
 @media (max-width:760px){.quickbar{display:flex}.foot{padding-bottom:calc(5.5rem + env(safe-area-inset-bottom))}}
 </style>
 </head>
@@ -446,6 +459,13 @@ h2{
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/></symbol>
     <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M5.5 6l1.2 15h10.6L18.5 6"/><path d="M10 10.5v6.5M14 10.5v6.5"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3.5-3.5a4 4 0 0 1-5-5L3 11l8-8 1.3 1.3"/><path d="M15 3a4 4 0 0 1 6 6l-3-1-2-2z"/></symbol>
+    <symbol id="i-blanket" viewBox="0 0 24 24"><path d="M4 5h16v11H4z"/><path d="M4 16c2 0 2 3 4 3h12v-3"/><path d="M8 5v11M12 5v11M16 5v11"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V7"/><path d="M3 14h18v4"/><path d="M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/><path d="M3 18v2M21 18v2"/></symbol>
+    <symbol id="i-roll" viewBox="0 0 24 24"><ellipse cx="7" cy="12" rx="3" ry="7"/><path d="M7 5h10c1.7 0 3 3.1 3 7s-1.3 7-3 7H7"/><ellipse cx="7" cy="12" rx="1" ry="2.3"/></symbol>
+    <symbol id="i-dolly" viewBox="0 0 24 24"><path d="M4 3h2l4 14"/><circle cx="12" cy="19" r="2"/><path d="M14 18.5 21 16.5"/><path d="M9.2 6.5h8.3l1.6 7.5-8 2"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path d="m14 4 6 6-3 3-6-6z"/><path d="M11 7 3.5 14.5a2.1 2.1 0 0 0 3 3L14 10"/><path d="M5 3l3 3-2 2-3-3"/><path d="m15 15 5 5"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.2-3.8A8.5 8.5 0 1 1 8 19z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9a4.5 4.5 0 0 1-2.4-2.4l.9-1-1-2z"/></symbol>
   </defs>
 </svg>
@@ -474,10 +494,10 @@ h2{
           <span class="stamp"><svg class="icon"><use href="#i-arrow" transform="rotate(-90 12 12)"/></svg><span data-i18n="hero.stamp1">This side up</span></span>
           <span class="stamp" data-i18n="hero.stamp2">Handle with care</span>
         </div>
-        <h1 id="h1"><span data-i18n="hero.h1">Your trusted moving company</span>
+        <h1 id="h1"><span data-i18n="hero.h1">South Florida’s favorite movers</span>
           <span class="h1-marker" data-i18n="hero.marker">— stress-free relocation</span>
         </h1>
-        <p class="hero-lede" data-i18n="hero.lede">Local and long-distance moving, packing, and delivery services handled by professionals who treat your belongings like their own.</p>
+        <p class="hero-lede" data-i18n="hero.lede">Local and long-distance moving, packing, junk removal and furniture assembly handled by professionals who treat your belongings like their own.</p>
         <div class="hero-actions">
           <a class="btn btn-ink" href="#quote"><span data-i18n="hero.cta">Get my free quote</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn-ghost" href="#how" data-i18n="hero.cta2">See how it works</a>
@@ -541,7 +561,7 @@ h2{
             <p class="panel-q" data-i18n="q.p3">Where should we send your quote?</p>
             <div class="field"><label for="name" data-i18n="q.name">Full name</label><input id="name" name="name" autocomplete="name"></div>
             <div class="field"><label for="phone" data-i18n="q.phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(954) 555-0123"></div>
-            <div class="field"><label for="notes" data-i18n="q.notes">Anything special? (optional)</label><textarea id="notes" name="notes" data-i18n-ph="q.notesPh" placeholder="Piano, stairs, storage…"></textarea></div>
+            <div class="field"><label for="notes" data-i18n="q.notes">Anything special? (optional)</label><textarea id="notes" name="notes" data-i18n-ph="q.notesPh" placeholder="Piano, stairs, junk to haul…"></textarea></div>
             <p class="err" id="err3" role="alert"></p>
             <div class="panel-nav">
               <button class="btn btn-ghost" type="button" data-prev="2" aria-label="Back"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg></button>
@@ -553,7 +573,7 @@ h2{
           <div class="panel done-panel" data-panel="done" hidden>
             <span class="done-stamp" data-i18n="q.doneStamp">Received</span>
             <p data-i18n="q.done">Thank you! A moving specialist will contact you shortly.</p>
-            <a class="btn btn-wa" id="waAgain" href="#" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="q.chat">Chat with a specialist now</span></a>
+            <div class="btn-row"><a class="btn btn-wa" id="waAgain" href="#" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="q.chat">Chat with a specialist now</span></a><a class="btn btn-call js-call" href="#"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="c.call">Call now</span></a></div>
           </div>
         </form>
 
@@ -584,16 +604,24 @@ h2{
       <div class="manifest">
         <div class="manifest-top" aria-hidden="true">
           <span><strong data-i18n="s.manifest">Packing list</strong> · Sunshine Moving Co.</span>
-          <span data-i18n="s.items">6 services</span>
+          <span data-i18n="s.items">4 services</span>
         </div>
         <ul>
-          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></span><div><h3 data-i18n="s.1t">Local moving</h3><p data-i18n="s.1d">Fast, careful moves for homes and apartments around town.</p></div><span class="item-code" aria-hidden="true">LOC</span></li>
-          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><div><h3 data-i18n="s.2t">Long-distance moving</h3><p data-i18n="s.2d">Reliable nationwide relocation with clear timelines.</p></div><span class="item-code" aria-hidden="true">LD</span></li>
-          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-package"/></svg></span><div><h3 data-i18n="s.3t">Packing &amp; unpacking</h3><p data-i18n="s.3d">Quality materials and expert packing for fragile items.</p></div><span class="item-code" aria-hidden="true">PCK</span></li>
-          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span><div><h3 data-i18n="s.4t">Commercial moving</h3><p data-i18n="s.4d">Minimal downtime when relocating your office or store.</p></div><span class="item-code" aria-hidden="true">COM</span></li>
-          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-warehouse"/></svg></span><div><h3 data-i18n="s.5t">Storage</h3><p data-i18n="s.5d">Safe short- and long-term storage solutions.</p></div><span class="item-code" aria-hidden="true">STO</span></li>
-          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-sofa"/></svg></span><div><h3 data-i18n="s.6t">Furniture delivery</h3><p data-i18n="s.6d">Pickup and delivery of large items, assembled on arrival.</p></div><span class="item-code" aria-hidden="true">FRN</span></li>
+          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><div><h3 data-i18n="s.1t">Local &amp; long-distance moving</h3><p data-i18n="s.1d">Homes and apartments moved around town or across the state, on time and with care.</p></div><span class="item-code" aria-hidden="true">MOV</span></li>
+          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-package"/></svg></span><div><h3 data-i18n="s.2t">Packing</h3><p data-i18n="s.2d">We pack your things with the right materials so everything arrives in one piece.</p></div><span class="item-code" aria-hidden="true">PCK</span></li>
+          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></span><div><h3 data-i18n="s.3t">Dumpster &amp; junk removal</h3><p data-i18n="s.3d">We haul away old furniture and anything you don’t want to take with you.</p></div><span class="item-code" aria-hidden="true">JNK</span></li>
+          <li class="item"><span class="item-ic"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span><div><h3 data-i18n="s.4t">Furniture assembly &amp; more</h3><p data-i18n="s.4d">We take apart and put back together beds, tables and furniture at your new place.</p></div><span class="item-code" aria-hidden="true">ASM</span></li>
         </ul>
+        <div class="includes">
+          <h3 data-i18n="s.incT">Every move includes</h3>
+          <ul>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-blanket"/></svg><div><strong data-i18n="s.i1t">Protective furniture blankets</strong><span data-i18n="s.i1d">For TVs and glass items.</span></div><svg class="icon tick" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg><div><strong data-i18n="s.i2t">Mattress bags</strong><span data-i18n="s.i2d">Keeps your mattress clean and protected.</span></div><svg class="icon tick" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-roll"/></svg><div><strong data-i18n="s.i3t">Plastic shrink wrap</strong><span data-i18n="s.i3d">Protects furniture from scratches and dust.</span></div><svg class="icon tick" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-tools"/></svg><div><strong data-i18n="s.i4t">Tools</strong><span data-i18n="s.i4d">To take apart and reassemble beds.</span></div><svg class="icon tick" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-dolly"/></svg><div><strong data-i18n="s.i5t">Moving dollies</strong><span data-i18n="s.i5d">To move furniture and heavy items safely.</span></div><svg class="icon tick" aria-hidden="true"><use href="#i-check"/></svg></li>
+          </ul>
+        </div>
         <div class="manifest-sign">
           <span class="marker" data-i18n="s.sign">All under one roof ✓</span>
           <a class="btn btn-ink" href="#quote"><span data-i18n="s.cta">Quote my move</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -650,10 +678,10 @@ h2{
           <h3>Sunshine Moving Company</h3>
           <ul class="loc-lines">
             <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a id="phoneLink" href="#">[Phone number]</a></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span><span data-i18n="l.days">Mon–Sat</span> · <span id="hoursText">[Hours]</span></span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="l.hours">Open 24 hours</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><a class="js-wa" href="#" target="_blank" rel="noopener" data-i18n="l.wa">Message us on WhatsApp</a></li>
           </ul>
-          <a class="btn btn-ink js-maps" href="#" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="l.dir">Get directions</span></a>
+          <div class="loc-btns"><a class="btn btn-ink js-maps" href="#" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="l.dir">Get directions</span></a><a class="btn btn-call js-call" href="#"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="c.call">Call now</span></a></div>
         </div>
         <a class="map js-maps" href="#" target="_blank" rel="noopener" aria-label="Open Sunshine Moving Company in Google Maps">
           <svg class="streets" viewBox="0 0 600 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -688,6 +716,7 @@ h2{
         <div class="hero-actions">
           <a class="btn btn-sun" href="#quote"><span data-i18n="f.cta">Get my free quote</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn-ghost js-wa" href="#" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="f.wa">Chat on WhatsApp</span></a>
+          <a class="btn btn-call js-call" href="#"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="c.call">Call now</span></a>
         </div>
       </div>
     </div>
@@ -704,6 +733,7 @@ h2{
 <div class="quickbar" id="quickbar">
   <a class="btn btn-sun" href="#quote" data-i18n="nav.quote">Free Quote</a>
   <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></a>
+  <a class="btn btn-call js-call" href="#" aria-label="Call"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
 </div>
 
 <script>
@@ -712,7 +742,6 @@ const CONFIG = {
   whatsapp: "19549379924",            // WhatsApp: country code + number, digits only
   phoneDisplay: "(954) 937-9924",     // How the phone is shown on the page
   phoneTel: "+19549379924",           // Phone for the call link
-  hours: "[Hours]",                   // e.g. 8:00 AM – 6:00 PM
   maps: "https://maps.app.goo.gl/cGnaMMCpFcc8npmz8?g_st=iw",
   // Google reviews ------------------------------------------------
   reviewsUrl: "https://maps.app.goo.gl/cGnaMMCpFcc8npmz8?g_st=iw",  // where "Read our reviews" goes
@@ -728,29 +757,33 @@ const CONFIG = {
 
 const I18N = {
   en: {
-    "nav.services":"Services","nav.reviews":"Reviews","nav.how":"How it works","nav.location":"Location","nav.quote":"Free Quote",
+    "c.call":"Call now","nav.services":"Services","nav.reviews":"Reviews","nav.how":"How it works","nav.location":"Location","nav.quote":"Free Quote",
     "hero.stamp1":"This side up","hero.stamp2":"Handle with care",
-    "hero.h1":"Your trusted moving company","hero.marker":"— stress-free relocation",
-    "hero.lede":"Local and long-distance moving, packing, and delivery services handled by professionals who treat your belongings like their own.",
+    "hero.h1":"South Florida’s favorite movers","hero.marker":"— stress-free relocation",
+    "hero.lede":"Local and long-distance moving, packing, junk removal and furniture assembly handled by professionals who treat your belongings like their own.",
     "hero.cta":"Get my free quote","hero.cta2":"See how it works","hero.note":"3 quick steps · reply on WhatsApp",
     "q.title":"Free moving quote","q.sub":"Let’s get you moving — 3 quick steps.","q.free":"No obligation",
     "q.s1":"Size","q.s2":"Route","q.s3":"Contact",
     "q.p1":"How big is your move?","q.p2":"Where and when are you moving?","q.p3":"Where should we send your quote?",
     "q.next":"Next","q.from":"Ship from · ZIP","q.to":"Ship to · ZIP","q.date":"Move date",
-    "q.name":"Full name","q.phone":"Phone","q.notes":"Anything special? (optional)","q.notesPh":"Piano, stairs, storage…",
+    "q.name":"Full name","q.phone":"Phone","q.notes":"Anything special? (optional)","q.notesPh":"Piano, stairs, junk to haul…",
     "q.send":"Send on WhatsApp","q.doneStamp":"Received","q.done":"Thank you! A moving specialist will contact you shortly.",
     "q.chat":"Chat with a specialist now","q.privacy":"We only use your info to prepare your quote.",
     "size.studio":"Studio","size.1":"1 Bedroom","size.2":"2 Bedrooms","size.3":"3 Bedrooms","size.4":"4+ Bedrooms",
     "e.size":"Pick a move size to continue.","e.zip":"Enter both 5-digit ZIP codes.","e.date":"Choose your move date.",
     "e.name":"Tell us your name.","e.phone":"Enter a phone number we can reach.",
     "t.1":"Licensed & insured","t.2":"Free, no-obligation quotes","t.3":"Careful, professional crews","t.4":"Transparent pricing",
-    "s.title":"Our services","s.sub":"Everything you need for a smooth move, under one roof.","s.manifest":"Packing list","s.items":"6 services",
-    "s.1t":"Local moving","s.1d":"Fast, careful moves for homes and apartments around town.",
-    "s.2t":"Long-distance moving","s.2d":"Reliable nationwide relocation with clear timelines.",
-    "s.3t":"Packing & unpacking","s.3d":"Quality materials and expert packing for fragile items.",
-    "s.4t":"Commercial moving","s.4d":"Minimal downtime when relocating your office or store.",
-    "s.5t":"Storage","s.5d":"Safe short- and long-term storage solutions.",
-    "s.6t":"Furniture delivery","s.6d":"Pickup and delivery of large items, assembled on arrival.",
+    "s.title":"Our services","s.sub":"Everything you need for a smooth move, under one roof.","s.manifest":"Packing list","s.items":"4 services",
+    "s.1t":"Local & long-distance moving","s.1d":"Homes and apartments moved around town or across the state, on time and with care.",
+    "s.2t":"Packing","s.2d":"We pack your things with the right materials so everything arrives in one piece.",
+    "s.3t":"Dumpster & junk removal","s.3d":"We haul away old furniture and anything you don’t want to take with you.",
+    "s.4t":"Furniture assembly & more","s.4d":"We take apart and put back together beds, tables and furniture at your new place.",
+    "s.incT":"Every move includes",
+    "s.i1t":"Protective furniture blankets","s.i1d":"For TVs and glass items.",
+    "s.i2t":"Mattress bags","s.i2d":"Keeps your mattress clean and protected.",
+    "s.i3t":"Plastic shrink wrap","s.i3d":"Protects furniture from scratches and dust.",
+    "s.i4t":"Tools","s.i4d":"To take apart and reassemble beds.",
+    "s.i5t":"Moving dollies","s.i5d":"To move furniture and heavy items safely.",
     "s.sign":"All under one roof ✓","s.cta":"Quote my move",
     "h.title":"How it works","h.sub":"Three simple steps to a stress-free move.",
     "h.1s":"Status: quote requested","h.1t":"Request your quote","h.1d":"Tell us your move size, date, and zip codes.",
@@ -758,7 +791,7 @@ const I18N = {
     "h.3s":"Status: delivered","h.3t":"Move day","h.3d":"Our crew arrives on time and handles everything.",
     "h.cta":"Start step 1","h.note":"takes about a minute",
     "r.title":"What our customers say","r.sub":"Real reviews from our Google profile.","r.google":"Google reviews","r.lead":"See what families say about moving with us — or tell others about your move.","r.read":"Read our reviews on Google","r.leave":"Leave a review","r.count":"{n} reviews on Google","r.slip":"Customer sign-off","r.signed":"Signed","r.blankT":"Moved with us?","r.blankD":"Your review helps other families move with confidence. It takes one minute on Google.",
-    "l.title":"Visit us","l.sub":"Find our office and get directions with one tap.","l.days":"Mon–Sat",
+    "l.title":"Visit us","l.sub":"Find our office and get directions with one tap.","l.hours":"Open 24 hours",
     "l.wa":"Message us on WhatsApp","l.dir":"Get directions","l.open":"Open in Google Maps",
     "f.title":"Ready to move? Let the sunshine in.","f.sub":"Get your free quote today — no obligation.",
     "f.cta":"Get my free quote","f.wa":"Chat on WhatsApp",
@@ -769,29 +802,33 @@ const I18N = {
     "lang.aria":"Cambiar a español"
   },
   es: {
-    "nav.services":"Servicios","nav.reviews":"Reseñas","nav.how":"Cómo funciona","nav.location":"Ubicación","nav.quote":"Cotización gratis",
+    "c.call":"Llamar ahora","nav.services":"Servicios","nav.reviews":"Reseñas","nav.how":"Cómo funciona","nav.location":"Ubicación","nav.quote":"Cotización gratis",
     "hero.stamp1":"Este lado arriba","hero.stamp2":"Manejar con cuidado",
-    "hero.h1":"Tu empresa de mudanzas de confianza","hero.marker":"— mudate sin estrés",
-    "hero.lede":"Mudanzas locales y de larga distancia, embalaje y entregas a cargo de profesionales que cuidan tus cosas como si fueran propias.",
+    "hero.h1":"Los mudanceros favoritos del sur de Florida","hero.marker":"— mudate sin estrés",
+    "hero.lede":"Mudanzas locales y de larga distancia, empacado, retiro de muebles y armado a cargo de profesionales que cuidan tus cosas como si fueran propias.",
     "hero.cta":"Quiero mi cotización","hero.cta2":"Ver cómo funciona","hero.note":"3 pasos rápidos · respuesta por WhatsApp",
     "q.title":"Cotización gratis","q.sub":"Empecemos tu mudanza — 3 pasos rápidos.","q.free":"Sin compromiso",
     "q.s1":"Tamaño","q.s2":"Ruta","q.s3":"Contacto",
     "q.p1":"¿Qué tamaño tiene tu mudanza?","q.p2":"¿Desde dónde, hacia dónde y cuándo?","q.p3":"¿A dónde te enviamos la cotización?",
     "q.next":"Siguiente","q.from":"Desde · ZIP","q.to":"Hasta · ZIP","q.date":"Fecha de mudanza",
-    "q.name":"Nombre completo","q.phone":"Teléfono","q.notes":"¿Algo especial? (opcional)","q.notesPh":"Piano, escaleras, depósito…",
+    "q.name":"Nombre completo","q.phone":"Teléfono","q.notes":"¿Algo especial? (opcional)","q.notesPh":"Piano, escaleras, cosas para tirar…",
     "q.send":"Enviar por WhatsApp","q.doneStamp":"Recibido","q.done":"¡Gracias! Un especialista en mudanzas te va a contactar en breve.",
     "q.chat":"Hablar con un especialista ahora","q.privacy":"Solo usamos tus datos para preparar tu cotización.",
     "size.studio":"Monoambiente","size.1":"1 dormitorio","size.2":"2 dormitorios","size.3":"3 dormitorios","size.4":"4+ dormitorios",
     "e.size":"Elegí el tamaño de la mudanza para seguir.","e.zip":"Ingresá los dos códigos ZIP de 5 dígitos.","e.date":"Elegí la fecha de la mudanza.",
     "e.name":"Decinos tu nombre.","e.phone":"Ingresá un teléfono donde podamos contactarte.",
     "t.1":"Con licencia y seguro","t.2":"Cotizaciones gratis y sin compromiso","t.3":"Equipos cuidadosos y profesionales","t.4":"Precios transparentes",
-    "s.title":"Nuestros servicios","s.sub":"Todo lo que necesitás para una mudanza tranquila, en un solo lugar.","s.manifest":"Lista de contenido","s.items":"6 servicios",
-    "s.1t":"Mudanza local","s.1d":"Mudanzas rápidas y cuidadosas de casas y departamentos en la ciudad.",
-    "s.2t":"Mudanza de larga distancia","s.2d":"Traslados confiables a todo el país con plazos claros.",
-    "s.3t":"Embalaje y desembalaje","s.3d":"Materiales de calidad y embalaje experto para objetos frágiles.",
-    "s.4t":"Mudanza comercial","s.4d":"Mínimo tiempo de inactividad al trasladar tu oficina o local.",
-    "s.5t":"Depósito","s.5d":"Guardado seguro a corto y largo plazo.",
-    "s.6t":"Entrega de muebles","s.6d":"Retiro y entrega de objetos grandes, armados al llegar.",
+    "s.title":"Nuestros servicios","s.sub":"Todo lo que necesitás para una mudanza tranquila, en un solo lugar.","s.manifest":"Lista de contenido","s.items":"4 servicios",
+    "s.1t":"Mudanza local y de larga distancia","s.1d":"Mudamos casas y departamentos dentro de la ciudad o a otro estado, a horario y con cuidado.",
+    "s.2t":"Empacado","s.2d":"Empacamos tus cosas con los materiales adecuados para que todo llegue en perfecto estado.",
+    "s.3t":"Dumpster y retiro de muebles","s.3d":"Nos llevamos y desechamos muebles viejos y todo lo que no quieras llevar.",
+    "s.4t":"Armado de muebles y más","s.4d":"Desarmamos y volvemos a armar camas, mesas y muebles en tu nueva casa.",
+    "s.incT":"Todas las mudanzas incluyen",
+    "s.i1t":"Mantas protectoras para muebles","s.i1d":"Para televisores y objetos de vidrio.",
+    "s.i2t":"Bolsa protectora para colchones","s.i2d":"Para proteger el colchón.",
+    "s.i3t":"Film plástico","s.i3d":"Para proteger los muebles.",
+    "s.i4t":"Herramientas","s.i4d":"Para desarmar y armar camas.",
+    "s.i5t":"Carritos de transporte","s.i5d":"Para trasladar muebles y objetos pesados.",
     "s.sign":"Todo en un solo lugar ✓","s.cta":"Cotizar mi mudanza",
     "h.title":"Cómo funciona","h.sub":"Tres pasos simples para mudarte sin estrés.",
     "h.1s":"Estado: cotización pedida","h.1t":"Pedí tu cotización","h.1d":"Contanos el tamaño, la fecha y los códigos ZIP.",
@@ -799,7 +836,7 @@ const I18N = {
     "h.3s":"Estado: entregado","h.3t":"Día de la mudanza","h.3d":"Nuestro equipo llega a horario y se encarga de todo.",
     "h.cta":"Empezar el paso 1","h.note":"te lleva un minuto",
     "r.title":"Lo que dicen nuestros clientes","r.sub":"Reseñas reales de nuestro perfil de Google.","r.google":"Reseñas de Google","r.lead":"Mirá lo que dicen las familias que se mudaron con nosotros — o contá cómo fue tu mudanza.","r.read":"Ver nuestras reseñas en Google","r.leave":"Dejar una reseña","r.count":"{n} reseñas en Google","r.slip":"Conformidad del cliente","r.signed":"Firma","r.blankT":"¿Te mudaste con nosotros?","r.blankD":"Tu reseña ayuda a otras familias a mudarse con confianza. Es un minuto en Google.",
-    "l.title":"Visitanos","l.sub":"Encontrá nuestra oficina y llegá con un toque.","l.days":"Lun–Sáb",
+    "l.title":"Visitanos","l.sub":"Encontrá nuestra oficina y llegá con un toque.","l.hours":"Abierto las 24 horas",
     "l.wa":"Escribinos por WhatsApp","l.dir":"Cómo llegar","l.open":"Abrir en Google Maps",
     "f.title":"¿Listo para mudarte? Que entre el sol.","f.sub":"Pedí tu cotización gratis hoy — sin compromiso.",
     "f.cta":"Quiero mi cotización","f.wa":"Chatear por WhatsApp",
@@ -897,10 +934,10 @@ document.querySelectorAll(".js-maps").forEach(a => a.href = CONFIG.maps);
 document.querySelectorAll(".js-reviews").forEach(a => a.href = CONFIG.reviewsUrl);
 document.querySelectorAll(".js-leave").forEach(a => a.href = CONFIG.leaveReviewUrl);
 document.getElementById("finalLogo").src = document.getElementById("logoImg").src;
+document.querySelectorAll(".js-call").forEach(a => a.href = "tel:" + CONFIG.phoneTel);
 const phoneLink = document.getElementById("phoneLink");
 phoneLink.textContent = CONFIG.phoneDisplay;
 if (CONFIG.phoneTel) phoneLink.href = "tel:" + CONFIG.phoneTel; else phoneLink.removeAttribute("href");
-document.getElementById("hoursText").textContent = CONFIG.hours;
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ---------- Quote form ---------- */
